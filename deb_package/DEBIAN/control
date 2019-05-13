@@ -1,0 +1,10 @@
+Package: algodoo-wine
+Version: 2.1.0
+Installed-Size: 
+Maintainer: Crash and Eddie <crash.eddie123@gmail.com>
+Section: science
+Architecture: all
+Priority: optional
+Depends: wine32, p7zip
+Description: Versão do Algodoo via Wine.
+ Algodoo gives you the opportunity to play with physics. Use your own hands and simple drawing tools to design, construct and explore the world of physics.

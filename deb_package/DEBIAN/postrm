@@ -1,0 +1,46 @@
+#!/bin/bash
+
+cat /etc/passwd | grep '/home/' | \
+grep -v 'cups\|syslog' | cut -d ':' -f 1 > /tmp/homes.list
+
+rm -rf /tmp/algodoo-path/
+
+while read USUARIO; do
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/applications/Algodoo.desktop"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/applications/Reset\ Algodoo.desktop"
+
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/64x64/apps/application-x-wine-extension-phz.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/64x64/apps/application-x-wine-extension-phi.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/64x64/apps/application-x-wine-extension-phn.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/256x256/apps/A75B_unins000.0.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/256x256/apps/application-x-wine-extension-phz.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/256x256/apps/application-x-wine-extension-phi.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/256x256/apps/application-x-wine-extension-phn.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/256x256/apps/4869_Algodoo.0.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/16x16/apps/A75B_unins000.0.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/16x16/apps/application-x-wine-extension-phz.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/16x16/apps/application-x-wine-extension-phi.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/16x16/apps/application-x-wine-extension-phn.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/16x16/apps/4869_Algodoo.0.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/128x128/apps/application-x-wine-extension-phz.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/128x128/apps/application-x-wine-extension-phi.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/128x128/apps/application-x-wine-extension-phn.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/24x24/apps/A75B_unins000.0.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/24x24/apps/4869_Algodoo.0.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/48x48/apps/A75B_unins000.0.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/48x48/apps/4869_Algodoo.0.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/32x32/apps/A75B_unins000.0.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/32x32/apps/application-x-wine-extension-phz.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/32x32/apps/application-x-wine-extension-phi.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/32x32/apps/application-x-wine-extension-phn.png"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.local/share/icons/hicolor/32x32/apps/4869_Algodoo.0.png"
+
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Algodoo/Uninstall\ Algodoo.lnk"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Algodoo/Algodoo\ on\ the\ Web.url"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Algodoo/Algodoo.lnk"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Algodoo/Reset\ Algodoo.lnk"
+
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/Program\ Files\ (x86)/Algodoo/"
+
+	rm -rf /home/$USUARIO/Desktop/Algodoo.desktop
+done < /tmp/homes.list

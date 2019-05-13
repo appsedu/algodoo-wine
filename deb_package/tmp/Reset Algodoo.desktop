@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Reset Algodoo
+Exec=env WINEPREFIX="/home/USUARIO/.wine" wine-stable C:\\\\windows\\\\command\\\\start.exe /Unix /home/USUARIO/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/Algodoo/Reset\\ Algodoo.lnk
+Type=Application
+StartupNotify=true
+Path=/home/USUARIO/.wine/dosdevices/c:/Program Files (x86)/Algodoo
+Icon=4869_Algodoo.0
+StartupWMClass=algodoo.exe
