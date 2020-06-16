@@ -39,8 +39,9 @@ while read USUARIO; do
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Algodoo/Algodoo\ on\ the\ Web.url"
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Algodoo/Algodoo.lnk"
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Algodoo/Reset\ Algodoo.lnk"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Algodoo/"
 
-	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/Program\ Files\ (x86)/Algodoo/"
+	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/Program\ Files\ \(x86\)/Algodoo/"
 
 	rm -rf /home/$USUARIO/Desktop/Algodoo.desktop
 done < /tmp/homes.list

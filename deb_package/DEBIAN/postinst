@@ -27,9 +27,10 @@ while read USUARIO; do
 	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/Algodoo.desktop > .local/share/applications/Algodoo.desktop"
 	runuser -l $USUARIO -c "sed 's/USUARIO/$USUARIO/g' /tmp/Reset\ Algodoo.desktop > .local/share/applications/Reset\ Algodoo.desktop"
 	
-	geraShort /home/$USUARIO/.local/share/applications/Algodoo.desktop \
-	/home/$USUARIO/.local/share/applications/Algodoo.desktop \
-	> /home/$USUARIO/Desktop/Algodoo.desktop
+	# geraShort /home/$USUARIO/.local/share/applications/Algodoo.desktop \
+	# /home/$USUARIO/.local/share/applications/Algodoo.desktop \
+	# > /home/$USUARIO/Desktop/Algodoo.desktop
+	cp /home/$USUARIO/.local/share/applications/Algodoo.desktop /home/$USUARIO/Desktop/Algodoo.desktop
 
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.cache/"
 	if [ -f /usr/bin/lxpanelctl ]; then
