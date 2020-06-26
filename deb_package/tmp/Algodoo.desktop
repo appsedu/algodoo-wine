@@ -6,3 +6,4 @@ StartupNotify=true
 Path=/home/USUARIO/.wine/dosdevices/c:/Program Files (x86)/Algodoo
 Icon=4869_Algodoo.0
 StartupWMClass=algodoo.exe
+Categories=Education;Science;
