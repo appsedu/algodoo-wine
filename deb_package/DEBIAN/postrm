@@ -43,5 +43,5 @@ while read USUARIO; do
 
 	runuser -l $USUARIO -c "rm -rf /home/$USUARIO/.wine/drive_c/Program\ Files\ \(x86\)/Algodoo/"
 
-	rm -rf /home/$USUARIO/Desktop/Algodoo.desktop
+	rm -rf /home/$USUARIO/Desktop/algodoo.desktop
 done < /tmp/homes.list

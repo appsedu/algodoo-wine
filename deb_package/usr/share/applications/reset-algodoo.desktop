@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Reset Algodoo
+Exec=reset-algodoo-wine
+Type=Application
+StartupNotify=true
+Icon=4869_Algodoo.0
+StartupWMClass=algodoo.exe
+Categories=Education;Science;
